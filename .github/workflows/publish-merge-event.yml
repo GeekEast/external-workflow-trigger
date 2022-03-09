@@ -1,14 +1,15 @@
 name: Dispatch Merge Event
 
-on:
-  pull_request:
-    branches:
-      - main
-    types: [closed]
+# on:
+#   pull_request:
+#     branches:
+#       - main
+#     types: [closed]
+on: [push]
 
 jobs:
   publish-merge-event:
-    if: ${{ github.event.pull_request.merged }}
+    # if: ${{ github.event.pull_request.merged }}
     runs-on: ubuntu-latest
     steps:
       - name: Trigger Open PR workflow
