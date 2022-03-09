@@ -1,0 +1,12 @@
+name: Post Workflow Event
+
+on: [workflow_dispatch]
+
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Logger
+        run: |
+          sleep 10
+          echo "hello world"
