@@ -1,0 +1,33 @@
+name: Post Workflow Event
+
+on: [push]
+
+jobs:
+  # job1:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Logger
+  #       run: |
+  #         sleep 10
+  #         echo "hello world"
+  # job2:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout current branch
+  #       uses: actions/checkout@v2
+  #     - name: Setup Node
+  #       uses: actions/setup-node@v1
+  #       with:
+  #         node-version: 16
+  #     - name: install dependencies
+  #       run: |
+  #         yarn install
+
+  job3:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Trigger Open PR workflow
+        uses: GeekEast/trigger-open-pr-workflow@1.0.21
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          workflow_filename: 'pipeline.yml'
