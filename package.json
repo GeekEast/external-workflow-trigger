@@ -1,0 +1,11 @@
+{
+  "name": "github-trigger-external-workflow",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:GeekEast/external-workflow-trigger.git",
+  "author": "James Tan <james@predictivehire.com>",
+  "license": "MIT",
+  "dependencies": {
+    "zx": "^5.2.0"
+  }
+}
