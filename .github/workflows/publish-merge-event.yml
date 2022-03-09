@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger Open PR workflow
-        uses: GeekEast/trigger-open-pr-workflow@1.0.18
+        uses: GeekEast/trigger-open-pr-workflow@1.0.19
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           workflow_filename: 'pipeline.yml'
