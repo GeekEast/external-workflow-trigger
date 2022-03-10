@@ -1,0 +1,16 @@
+name: pipeline
+
+on: push
+
+jobs:
+  rebase-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout current branch
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Rebase before merging?
+        uses: cyberark/enforce-rebase@v2
+        with:
+          default-branch: main
