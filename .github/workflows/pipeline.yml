@@ -3,10 +3,14 @@ name: Post Workflow Event
 on: [workflow_dispatch]
 
 jobs:
-  echo:
+  rebase-check:
     runs-on: ubuntu-latest
     steps:
-      - name: Logger
-        run: |
-          sleep 10
-          echo "hello world"
+      - name: Checkout current branch
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Rebase before merging?
+        uses: cyberark/enforce-rebase@v2
+        with:
+          default-branch: main
